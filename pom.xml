@@ -130,7 +130,7 @@
 		<profile>
 			<id>e2e</id>
 			<properties>
-				<skipTests>false</skipTests>
+				<spring.profiles.active>e2e</spring.profiles.active>
 			</properties>
 		</profile>
 	</profiles>

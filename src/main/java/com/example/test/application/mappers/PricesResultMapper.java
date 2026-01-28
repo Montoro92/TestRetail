@@ -1,14 +1,14 @@
-package com.example.test.logic.mappers;
+package com.example.test.application.mappers;
 
-import com.example.test.dto.ApplicablePrice;
-import com.example.test.logic.model.Price;
+import com.example.test.application.dto.ApplicablePrice;
+import com.example.test.domain.model.Price;
 import java.time.ZoneId;
 
 public class PricesResultMapper {
 
     public ApplicablePrice map(Price other) {
         return ApplicablePrice.builder()
-            .brandId(other.getBrand().getId())
+            .brandId(other.getBrandId())
             .productId(other.getProductId())
             .applicableRate(other.getPriceList())
             .startDate(other.getStartDate().atZone(ZoneId.of("UTC")).toOffsetDateTime())

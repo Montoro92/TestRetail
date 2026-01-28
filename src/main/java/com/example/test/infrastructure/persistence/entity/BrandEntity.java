@@ -1,4 +1,4 @@
-package com.example.test.logic.model;
+package com.example.test.infrastructure.persistence.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,7 +11,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "BRANDS")
-public class Brand {
+public class BrandEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

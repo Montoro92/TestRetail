@@ -12,9 +12,9 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 
 @SpringBootTest
-@AutoConfigureMockMvc
+@AutoConfigureMockMvc(addFilters = false)
 @ActiveProfiles("e2e")
-class PricesE2EDockerIT {
+class PricesE2EH2Test {
 
     @Autowired
     private MockMvc mockMvc;

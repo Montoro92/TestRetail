@@ -1,4 +1,4 @@
-package com.example.test.logic.model;
+package com.example.test.infrastructure.persistence.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -16,7 +16,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "PRICES")
-public class Price {
+public class PriceEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,7 +30,7 @@ public class Price {
         name = "brand_id",
         nullable = false
     )
-    private Brand brand;
+    private BrandEntity brand;
 
     @Column(name = "START_DATE", nullable = false)
     private LocalDateTime startDate;

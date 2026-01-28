@@ -1,6 +1,6 @@
 package com.example.test.config;
 
-import com.example.test.dto.ErrorResponse;
+import com.example.test.application.dto.ErrorResponse;
 import com.example.test.exceptions.PriceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

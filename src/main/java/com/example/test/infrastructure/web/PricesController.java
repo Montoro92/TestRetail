@@ -1,7 +1,7 @@
-package com.example.test.controller;
+package com.example.test.infrastructure.web;
 
-import com.example.test.dto.ApplicablePrice;
-import com.example.test.logic.PricesService;
+import com.example.test.application.dto.ApplicablePrice;
+import com.example.test.application.usecase.GetApplicablePriceUseCase;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import java.time.OffsetDateTime;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class PricesController {
 
-    private final PricesService service;
+    private final GetApplicablePriceUseCase applicablePrice;
 
     @GetMapping
     @Operation(summary = "Get applicable price")
@@ -28,7 +28,7 @@ public class PricesController {
             description = "Product identifier") Long productId, 
             @RequestParam(name = "brand", required = true) @Parameter(
             description = "Brand identifier") Long brandId) {
-        return ResponseEntity.ok(service.getApplicablePrice(date, productId, brandId));
+        return ResponseEntity.ok(applicablePrice.execute(brandId, productId, date));
     }
     
 }

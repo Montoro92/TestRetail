@@ -1,4 +1,4 @@
-package com.example.test.dto;
+package com.example.test.application.dto;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
