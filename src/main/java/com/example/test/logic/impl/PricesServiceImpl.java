@@ -16,7 +16,7 @@ public class PricesServiceImpl implements PricesService {
 
     private final PricesRepository repository;
 
-    private static final PricesResultMapper pricesResultMapper = new PricesResultMapper();
+    private static final PricesResultMapper RESULT_MAPPER = new PricesResultMapper();
 
     @Override
     public ApplicablePrice getApplicablePrice(OffsetDateTime date, Long productId, Long brandId) {
@@ -24,7 +24,7 @@ public class PricesServiceImpl implements PricesService {
             .orElseThrow(() -> 
                 new PriceNotFoundException("There is no applicable price for this product " + productId)
             );
-        return pricesResultMapper.map(applicablePrice);
+        return RESULT_MAPPER.map(applicablePrice);
     }
     
 }
