@@ -14,7 +14,7 @@ import org.springframework.test.web.servlet.MockMvc;
 @SpringBootTest
 @AutoConfigureMockMvc(addFilters = false)
 @ActiveProfiles("e2e")
-class PricesE2EH2Test {
+class PricesE2EH2IT {
 
     @Autowired
     private MockMvc mockMvc;
